@@ -119,8 +119,9 @@ public class Menu {
 					int tr = 1;
 					mainMenuAction(tr);
 				}else{
+					Account account = new Account();
 					String name = sc.nextLine();
-					Account acc = Account.accountSearch(name, Account.insaidAccount);
+					Account acc = account.accountSearch(name, account.insaidAccount);
 					System.out.println("How much money do you want put into your account ");
 					if(sc.hasNextInt()){
 						int sum = sc.nextInt();
@@ -144,19 +145,20 @@ public class Menu {
 	}
 	
 	private void infoMenuAction(int choiceAct){
+		Account account = new Account();
 		switch(choiceAct){
 			case 1:
 				Scanner sc = new Scanner(System.in);
 				System.out.println("Your name pls ");
-				String name = sc.nextLine();
-				Account acc = Account.accountSearch(name, Account.insaidAccount);
+				String nameser = sc.nextLine();
+				Account acc = account.accountSearch(nameser, account.insaidAccount);
 				System.out.println(acc.summa);
 				break;
 			case 2:
 				Scanner sc1 = new Scanner(System.in);
 				System.out.println("Your name pls ");
-				name = sc1.nextLine();
-				acc = Account.accountSearch(name, Account.insaidAccount);
+				String name1 = sc1.nextLine();
+				acc = account.accountSearch(name1, account.insaidAccount);
 				System.out.println(acc.currency);
 				break;
 			case 0:
@@ -178,13 +180,13 @@ public class Menu {
 				Scanner sc =  new Scanner(System.in);
 				System.out.println("Your account ");
 				String nameFrom = sc.nextLine();
-				Account accFrom = Account.accountSearch(nameFrom, Account.insaidAccount);
+//				Account accFrom = Account.accountSearch(nameFrom, Account.insaidAccount);
 				System.out.println("How much do you want to transfer");
 				int summa = sc.nextInt();
 				System.out.println("Which account do you want to transfer");
 				String nameTo = sc.nextLine();
-				Account accTo = Account.accountSearch(nameTo, Account.insaidAccount);
-				accFrom.transfer(summa, accTo);
+//				Account accTo = Account.accountSearch(nameTo, Account.insaidAccount);
+//				accFrom.transfer(summa, accTo);
 				break;
 			default:
 				System.out.println("\tError !!! ");
@@ -200,11 +202,11 @@ public class Menu {
 				Scanner sc= new Scanner(System.in);
 				System.out.println("Name of your account");
 				String nameOwner = sc.nextLine();
-				Account accWith = Account.accountSearch(nameOwner, Account.insaidAccount);
+//				Account accWith = Account.accountSearch(nameOwner, Account.insaidAccount);
 				System.out.println("How much money do you want withdraw");
 				if(sc.hasNextInt()){
 					int withdrawMoney = sc.nextInt();
-					accWith.withdrowAccount(withdrawMoney, accWith);
+//					accWith.withdrowAccount(withdrawMoney, accWith);
 				}else{
 					System.out.println("only summa ");
 				}
